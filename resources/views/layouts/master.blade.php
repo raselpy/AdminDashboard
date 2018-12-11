@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="{{asset('image/man.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }} </a>
         </div>
       </div>
 
@@ -63,15 +63,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="fas fa-tachometer-alt"></i>
               <p>
-                  Admin Home Page
+                Admin Home
+              </p>
+            </a>
+          </li>
+               
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="fas fa-cog"></i>
+              <p>
+                Management
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Active Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Inactive Page</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user"></i>
+              <p>
+                Profile
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-power-off"></i>
+              <p>
+                Logout
+              </p>
+            </a>
           </li>
           
         </ul>
@@ -83,7 +124,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    
   </div>
   <!-- /.content-wrapper -->
 
