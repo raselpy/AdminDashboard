@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
-              <i class="fas fa-tachometer-alt"></i>
+              <i class="fas fa-tachometer-alt blue"></i>
               <p>
                 Admin Home
               </p>
@@ -76,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link ">
-              <i class="fas fa-cog"></i>
+              <i class="fas fa-cog green"></i>
               <p>
                 Management
                 <i class="right fas fa-angle-left"></i>
@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
-              <i class="fas fa-user"></i>
+              <i class="fas fa-user yellow"></i>
               <p>
                 Profile
               </p>
@@ -108,12 +108,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-power-off"></i>
-              <p>
-                Logout
-              </p>
-            </a>
+            
+              
+                <a class="nav-link" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    <i class="fas fa-power-off red"> </i>
+                    <p>
+                      {{ __('Logout') }}
+                    </p>             
+                    
+                </a>
+              
+               
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
           </li>
           
         </ul>
